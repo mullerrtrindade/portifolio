@@ -15,7 +15,7 @@ def main():
     if "usuario" not in st.session_state:
         st.session_state.usuario = ""
 
-
+    # Se estiver logado
     if st.session_state.logado:
         st.success(f"Login bem-sucedido! Bem-vindo, {st.session_state.usuario}!")
 
@@ -29,6 +29,7 @@ def main():
 
         return
 
+    # Se não estiver logado
     aba = st.radio("Escolha uma opção:", ("Login", "Cadastrar"))
 
     if aba == "Cadastrar":
