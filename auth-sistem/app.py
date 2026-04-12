@@ -1,12 +1,12 @@
 import streamlit as st
-from login import cadastrar_usuario, autenticar
+from login import cadastrar_usuario, autenticar, is_admin
 
 
 def main():
     st.set_page_config(page_title="Safelog Enterprises", page_icon="🔐", layout="centered")
 
     st.title("Safelog Enterprises")
-    st.write("Bem-vindo ao sistema de autenticação da Safelog Enterprises!")
+    st.markdown("Bem-vindo à **Safelog Enterprises**!")
 
     # Controle de sessão
     if "logado" not in st.session_state:
@@ -19,8 +19,10 @@ def main():
     if st.session_state.logado:
         st.success(f"Login bem-sucedido! Bem-vindo, {st.session_state.usuario}!")
 
-        st.subheader("Área do sistema")
-        st.write("Aqui você pode colocar as funcionalidades protegidas do seu app.")
+        st.subheader("Ferramentas do Usuário")
+        st.markdown("*Aqui você pode acessar suas **ferramentas** e **recursos exclusivos** " \
+        "como **colaborador(a)** da Safelog Enterprises*.")
+        st.markdown("**EM DESENVOLVIMENTO...**")
 
         if st.button("Sair"):
             st.session_state.logado = False

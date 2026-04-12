@@ -52,3 +52,5 @@ def autenticar(usuario, senha):
 
     return False
 
+def is_admin(senha):
+    return senha == "admin123"
